@@ -29,13 +29,18 @@ function operate(num1, num2, operator) {
     } 
 }
 
+function evaluate(input) {
+    input = input.split('').filter(' ');
+    console.log(input)
+}
+
 function updateDisplay(input) {
     const display = document.querySelector('.display')
 
     const operators = ["+", "-", "/", "*", "Equals"];
 
     // Check if last value was an operator. If previous input was an operator and current input is one, raise an error
-    if (display.textContent.split("").pop() == " " && operators.includes(input)){
+    if (display.textContent.split('').pop() == ' ' && operators.includes(input)){
         alert("Please do not stack operatoring commands repeatedly")
         return;
     }
@@ -50,6 +55,7 @@ function updateDisplay(input) {
         case '*':
             return display.textContent += " * ";
         case 'Equals':
+            evaluate(display.textContent);
             return display.textContent += " = ";
         case 'Clear':
             return display.textContent = " ";
