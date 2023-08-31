@@ -32,6 +32,14 @@ function operate(num1, num2, operator) {
 function updateDisplay(input) {
     const display = document.querySelector('.display')
 
+    const operators = ["+", "-", "/", "*", "Equals"];
+
+    // Check if last value was an operator. If previous input was an operator and current input is one, raise an error
+    if (display.textContent.split("").pop() == " " && operators.includes(input)){
+        alert("Please do not stack operatoring commands repeatedly")
+        return;
+    }
+
     switch (input) {
         case '+':
             return display.textContent += " + ";
