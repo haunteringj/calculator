@@ -29,19 +29,31 @@ function operate(num1, num2, operator) {
     } 
 }
 
-
 function updateDisplay(input) {
     const display = document.querySelector('.display')
 
-    switch(input) {
+    switch (input) {
         case '+':
-            display.textContent += "+"
+            return display.textContent += " + ";
+        case '-':
+            return display.textContent += " - " ;          
+        case '/':
+            return display.textContent += " / ";
+        case '*':
+            return display.textContent += " * ";
+        case 'Equals':
+            return display.textContent += " = ";
+        case 'Clear':
+            return display.textContent = " ";
         default:
+            return display.textContent += input;
     }
 }
 
-const numberBtn = document.querySelectorAll('.number');
-numberBtn.addEventListener('click', () => {
-    updateDisplay('+');
+const btns = document.querySelectorAll('button');
+btns.forEach(button => {
+    button.addEventListener('click', () => {
+        updateDisplay(button.textContent);
+    });        
 });
 
