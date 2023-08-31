@@ -1,17 +1,17 @@
 function add(num1, num2) {
-    return 42;
+    return num1 + num2;
 }
 
 function subtract(num1, num2) {
-    return 42;
+    return num1 - num2;
 }
 
 function multiply(num1, num2) {
-    return 42;
+    return num1 * num2;
 }
 
 function divide(num1, num2) {
-    return 42;
+    return num1 / num2;
 }
 
 function operate(num1, num2, operator) {
@@ -29,6 +29,19 @@ function operate(num1, num2, operator) {
     } 
 }
 
-let num1 = 0;
-let num2 = 0;
-let operator = '+';
+
+function updateDisplay(input) {
+    const display = document.querySelector('.display')
+
+    switch(input) {
+        case '+':
+            display.textContent += "+"
+        default:
+    }
+}
+
+const numberBtn = document.querySelectorAll('.number');
+numberBtn.addEventListener('click', () => {
+    updateDisplay('+');
+});
+

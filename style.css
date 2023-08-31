@@ -1,0 +1,50 @@
+/* CSS Color Palette
+--text: #0d211c;
+--background: #fbfefd;
+--primary: #843348;
+--secondary: #eae1c8;
+--accent: #a5405a;
+*/
+
+/* CSS styling for the general page */
+body {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #fbfefd;
+    color: #0d211c;
+}
+
+h2 {
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.calc-container {
+    display: flex;
+}
+
+.calc-container .number-container, .calc-container .operator-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    flex: 1;
+    border-radius: 10px;
+    background-color: #a5405a;
+    margin: 1%;
+}
+
+.calc-container .number-container .number, .calc-container .operator-container .operator {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    background-color: #eae1c8; 
+    border-radius: 10px;
+}
+
+.calc-container .number-container .number:hover, .calc-container .operator-container .operator:hover {
+    background-color: #a5405a; 
+    color: white;
+
+}
